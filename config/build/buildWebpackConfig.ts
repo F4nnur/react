@@ -21,7 +21,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         module: {
             // лоудеры которые выходят за рамки js - обработка таких файлов как (png, jpg, css и т.д)
             // это правило обрабатывает только ts,tsx
-            rules: buildLoaders(),
+            rules: buildLoaders(options),
         },
         resolve: buildResolvers(),
         devtool: isDev ? 'inline-source-map' : undefined,
