@@ -13,7 +13,7 @@ const App = () => {
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Navbar toggleTheme={toggleTheme}/>
+            <Navbar/>
             <AppRouter/>
         </div>
     );
