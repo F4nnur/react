@@ -23,7 +23,6 @@ const Navbar = ({className}: NavbarProps) => {
                     О сайте
                 </AppLink>
             </div>
-            <ThemeSwitcher/>
         </div>
     );
 };
