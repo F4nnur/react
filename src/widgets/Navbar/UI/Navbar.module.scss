@@ -1,0 +1,17 @@
+.Navbar {
+  width: 100%;
+  height: var(--navbar-height);
+  border: 0.5px solid black;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbarLinks {
+  padding: 4px;
+  margin-right: auto;
+}
+.themeSwitchButtonContainer {
+  padding: 4px;
+}
