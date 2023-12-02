@@ -2,7 +2,6 @@ import React from 'react';
 import {classNames} from "shared/lib/classNames/classNames";
 import cls from './Navbar.module.scss'
 import AppLink from "shared/UI/AppLink/AppLink";
-import {ThemeSwitcher} from "widgets/ThemeSwitcher";
 import {useTranslation} from "react-i18next";
 
 export interface NavbarProps {
