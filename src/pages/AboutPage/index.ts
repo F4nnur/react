@@ -1,3 +1,3 @@
-import AboutPage from "./UI/AboutPage";
+import AboutPage from './UI/AboutPage';
 
-export {AboutPage}
+export { AboutPage };
