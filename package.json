@@ -10,7 +10,8 @@
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:css": "npx stylelint \"**/*.scss\"",
-    "lint:css:fix": "npx stylelint \"**/*.scss\" --fix"
+    "lint:css:fix": "npx stylelint \"**/*.scss\" --fix",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
