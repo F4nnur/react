@@ -54,8 +54,8 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'no-undef': 'off',
         'import/no-extraneous-dependencies': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
-        'max-len': ['error', { ignoreComments: true }],
+        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to'] }],
+        'max-len': ['error', { ignoreComments: true, code: 120 }],
         'no-restricted-globals': 'off',
     },
     globals: {
