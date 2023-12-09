@@ -16,7 +16,7 @@ function Sidebar({ className }: SidebarProps) {
     };
     return (
         <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
-            <Button className={classNames(cls.toggleButton)} onClick={onToggle}>toggle</Button>
+            {/* <Button className={classNames(cls.toggleButton)} onClick={onToggle}>toggle</Button> */}
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LanguageSwitcher />
