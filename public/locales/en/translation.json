@@ -5,5 +5,7 @@
   "О сайте": "About",
   "Язык": "English",
   "Loading": "Loading...",
-  "Страница не найадена": "Page Not Found"
+  "Страница не найадена": "Page Not Found",
+  "Произошла ошибка": "Something went wrong",
+  "Обновить страницу": "Reload Page"
 }
