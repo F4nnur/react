@@ -13,16 +13,7 @@ const Navbar = ({ className }: NavbarProps) => {
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
             <div className={classNames(cls.navbarLinks)}>
-                <AppLink
-                    to="/"
-                >
-                    {t('Главная')}
-                </AppLink>
-                <AppLink
-                    to="/about"
-                >
-                    {t('О сайте')}
-                </AppLink>
+                /
             </div>
         </div>
     );
