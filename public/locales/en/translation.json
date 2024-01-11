@@ -9,5 +9,7 @@
   "Произошла ошибка": "Something went wrong",
   "Обновить страницу": "Reload Page",
   "Короткая версия": "Eng",
-  "Войти": "LogIn"
+  "Войти": "LogIn",
+  "Имя": "Username",
+  "Пароль": "Password"
 }
