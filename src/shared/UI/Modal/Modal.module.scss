@@ -10,16 +10,6 @@
     color: var(--primary-color);
 }
 
-.Modal.dark {
-    --bg-color: #fff;
-    --primary-color: black;
-}
-
-.Modal.normal {
-    --bg-color: #23272f;
-    --primary-color: #149eca;
-}
-
 .overlay {
     width: 100%;
     height: 100%;

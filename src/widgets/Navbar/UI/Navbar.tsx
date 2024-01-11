@@ -20,7 +20,10 @@ const Navbar = ({ className }: NavbarProps) => {
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
             <Button className={cls.navbarLinks} onClick={onToggleModal}>{t('Войти')}</Button>
-            <Modal isOpen={isAuthModal} onClose={onToggleModal} />
+            {/* eslint-disable-next-line i18next/no-literal-string */}
+            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda dicta doloremque expedita fugit ipsa ipsam laudantium optio. Corporis cumque deleniti enim esse laborum molestiae nesciunt nisi, quod saepe tempore, velit, voluptas voluptatum. Animi, aperiam aspernatur, aut beatae cum delectus deleniti et officiis, reiciendis reprehenderit soluta tempore vero vitae. Hic?
+            </Modal>
         </div>
     );
 };
