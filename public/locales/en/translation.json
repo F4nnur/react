@@ -11,5 +11,8 @@
   "Короткая версия": "Eng",
   "Войти": "LogIn",
   "Имя": "Username",
-  "Пароль": "Password"
+  "Пароль": "Password",
+  "Форма авторизации": "Authorization form",
+  "Вы ввели неправильный логин и пароль": "Username or password incorrect",
+  "Выйти": "LogOut"
 }
