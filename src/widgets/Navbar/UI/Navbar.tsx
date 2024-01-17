@@ -1,12 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import Modal from 'shared/UI/Modal/Modal';
 import Button from 'shared/UI/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAuthData, userActions } from 'entities/User';
-import Text from 'shared/UI/Text/Text';
 import cls from './Navbar.module.scss';
 
 export interface NavbarProps {
