@@ -1,24 +1,34 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo, useCallback, useEffect } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import Button from 'shared/UI/Button/Button';
 import Input from 'shared/UI/Input/Input';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 import Text, { TextTheme } from 'shared/UI/Text/Text';
+import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
+import DynamicModuleLoader, { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { loginByUsername } from '../../model/services/loginByUsername';
-import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
-import { loginActions } from '../../model/slice/loginSlice';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
     className?: string;
 }
+
+const InitialReducers: ReducersList = {
+    loginForm: loginReducer,
+};
 const LoginForm = memo((props: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
-    const {
-        username, password, error, isLoading,
-    } = useSelector(getLoginState);
+    const username = useSelector(getLoginUsername);
+    const password = useSelector(getLoginPassword);
+    const isLoading = useSelector(getLoginIsLoading);
+    const error = useSelector(getLoginError);
 
     const handleUsername = useCallback((value: string) => {
         dispatch(loginActions.setUsername(value));
@@ -36,31 +46,33 @@ const LoginForm = memo((props: LoginFormProps) => {
         className,
     } = props;
     return (
-        <div className={classNames(cls.LoginForm, {}, [className])}>
-            <Text title={t('Форма авторизации')} />
-            {error && <Text text={error} theme={TextTheme.ERROR} />}
-            <Input
-                type="text"
-                className={cls.input}
-                onChange={handleUsername}
-                placeholder={t('Имя')}
-                value={username}
-            />
-            <Input
-                type="text"
-                className={cls.input}
-                onChange={handlePassword}
-                placeholder={t('Пароль')}
-                value={password}
-            />
-            <Button
-                className={cls.loginBtn}
-                onClick={onLoginClick}
-                disabled={isLoading}
-            >
-                {t('Войти')}
-            </Button>
-        </div>
+        <DynamicModuleLoader reducers={InitialReducers} removeAfterUnmount>
+            <div className={classNames(cls.LoginForm, {}, [className])}>
+                <Text title={t('Форма авторизации')} />
+                {error && <Text text={error} theme={TextTheme.ERROR} />}
+                <Input
+                    type="text"
+                    className={cls.input}
+                    onChange={handleUsername}
+                    placeholder={t('Имя')}
+                    value={username}
+                />
+                <Input
+                    type="text"
+                    className={cls.input}
+                    onChange={handlePassword}
+                    placeholder={t('Пароль')}
+                    value={password}
+                />
+                <Button
+                    className={cls.loginBtn}
+                    onClick={onLoginClick}
+                    disabled={isLoading}
+                >
+                    {t('Войти')}
+                </Button>
+            </div>
+        </DynamicModuleLoader>
     );
 });
 
